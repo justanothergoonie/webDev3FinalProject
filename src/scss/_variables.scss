@@ -1,0 +1,36 @@
+// Colors
+
+$primary-bkg-color: #e7d3c4;
+
+$secondary-color: #262626;
+
+$link-color: #ffffff;
+
+$button-color: #dd5800;
+
+$border-color: #472716;
+
+// breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// Mixins
+
+@mixin bp-small {
+	@media screen and (min-width: $breakpoint-mobile) {
+		@content;
+	}
+}
+
+@mixin bp-med {
+	@media screen and (min-width: $breakpoint-tablet) {
+		@content;
+	}
+}
+
+@mixin bp-large {
+	@media screen and (min-width: $breakpoint-desktop) {
+		@content;
+	}
+}
