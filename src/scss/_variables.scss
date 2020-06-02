@@ -16,6 +16,16 @@ $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
 
 // Mixins
+@mixin bounds {
+	border: 1px solid red;
+	background: rgba(255, 0, 0, 0.2);
+}
+
+@mixin flex-center {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
 
 @mixin bp-small {
 	@media screen and (min-width: $breakpoint-mobile) {
