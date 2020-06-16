@@ -12,8 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Abril Fatface', serif;
-	font-weight: bold;
+	font-family: 'Zilla Slab', serif;
 	letter-spacing: 0.03em;
 }
 
@@ -41,11 +40,15 @@ h6 {
 	font-size: 0.8rem;
 }
 
-p,
+p {
+	line-height: 2em;
+	font-family: 'Montserrat', serif;
+}
 ul,
 ol,
 a {
 	line-height: 2em;
+	font-family: 'Zilla Slab', serif;
 }
 
 ol {
@@ -62,4 +65,71 @@ a {
 	&:active {
 		text-decoration: underline;
 	}
+}
+
+header {
+	background: $secondary-color;
+	padding: $standard-spacing;
+	display: flex;
+	flex-direction: column;
+	@include flex-center;
+	svg {
+		// margin: 15px auto;
+	}
+	nav {
+		@include flex-center;
+		font-size: 1.5rem;
+		padding: $standard-spacing;
+	}
+}
+
+footer {
+	@include flex-center;
+	flex-direction: column;
+	background: $secondary-color;
+	padding: $standard-spacing;
+	.hours {
+		@include flex-center;
+		flex-direction: column;
+		color: white;
+		padding-bottom: 40px;
+
+		h1 {
+			font-size: 1.5rem;
+			padding: 15px;
+		}
+		ul {
+			@include flex-center;
+			flex-direction: column;
+			li {
+				font-size: 1.1rem;
+				span {
+					font-size: 1.4rem;
+				}
+			}
+		}
+	}
+	.social {
+		@include flex-center;
+		flex-direction: column;
+		color: white;
+		h1 {
+			font-size: 1.5rem;
+			padding: 15px;
+		}
+		ul {
+			@include flex-center;
+			flex-direction: column;
+			li {
+				font-size: 1.1rem;
+				a {
+					font-size: 1.4rem;
+				}
+			}
+		}
+	}
+}
+
+.active {
+	border-bottom: 3px solid white;
 }

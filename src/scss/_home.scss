@@ -1,6 +1,72 @@
-header {
-	background: $secondary-color;
+.home-hero {
+	@include flex-center;
+	video {
+		width: 100%;
+		position: relative;
+	}
+	section {
+		@include flex-center;
+		position: absolute;
+		flex-direction: column;
+		padding: $standard-spacing;
+		h1 {
+			color: white;
+			font-size: 2rem;
+			padding: 40px;
+		}
+		a {
+			padding: 40px;
+			button {
+				background: $button-color;
+				color: $link-color;
+				width: 200px;
+				height: 50px;
+				font-size: 1.3rem;
+				border-radius: 10px;
+				border-color: $button-border-color;
+			}
+		}
+	}
 }
-footer {
-	background: $secondary-color;
+
+.our-story {
+	@include flex-center;
+	flex-direction: column;
+	background-color: $primary-bkg-color;
+	h1 {
+		font-size: 3rem;
+		padding: 40px;
+	}
+	p {
+		padding: $standard-spacing;
+		font-size: 1.3rem;
+	}
+}
+
+.menu-hero {
+	@include flex-center;
+	h1 {
+		position: absolute;
+		color: white;
+		z-index: 1;
+	}
+	img {
+		width: 100%;
+		height: 100px;
+		object-fit: cover;
+		position: relative;
+	}
+}
+
+.coffee-menu-container {
+	@include flex-center;
+	flex-direction: column;
+	background-color: $primary-bkg-color;
+	img {
+		margin: $standard-spacing;
+	}
+	.coffee-menu {
+		@include flex-center;
+		flex-direction: column;
+	}
 }
