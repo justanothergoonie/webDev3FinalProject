@@ -27,6 +27,17 @@ $breakpoint-desktop: 1024px;
 	justify-content: center;
 }
 
+@mixin button {
+	height: 50px;
+	width: 200px;
+	background-color: $button-color;
+	border-color: $button-border-color;
+	border-radius: 10px;
+	font-size: 1.3em;
+	color: white;
+	font-family: 'Montserrat', serif;
+}
+
 @mixin bp-small {
 	@media screen and (min-width: $breakpoint-mobile) {
 		@content;

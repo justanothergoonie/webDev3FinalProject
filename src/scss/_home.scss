@@ -17,13 +17,7 @@
 		a {
 			padding: 40px;
 			button {
-				background: $button-color;
-				color: $link-color;
-				width: 200px;
-				height: 50px;
-				font-size: 1.3rem;
-				border-radius: 10px;
-				border-color: $button-border-color;
+				@include button;
 			}
 		}
 	}
@@ -42,7 +36,7 @@
 		font-size: 1.3rem;
 	}
 }
-
+// ------------------------------ //
 .menu-hero {
 	@include flex-center;
 	h1 {
@@ -52,7 +46,7 @@
 	}
 	img {
 		width: 100%;
-		height: 100px;
+		height: 200px;
 		object-fit: cover;
 		position: relative;
 	}
@@ -62,11 +56,110 @@
 	@include flex-center;
 	flex-direction: column;
 	background-color: $primary-bkg-color;
-	img {
-		margin: $standard-spacing;
-	}
 	.coffee-menu {
 		@include flex-center;
 		flex-direction: column;
+		img {
+			margin: 35px;
+			width: 125%;
+		}
+		.menu-item-container {
+			width: 125%;
+			h2 {
+				@include flex-center;
+				margin-bottom: $standard-spacing;
+			}
+			ul {
+				li {
+					display: flex;
+					justify-content: space-between;
+					font-size: 1.5rem;
+					padding-bottom: $standard-spacing;
+				}
+			}
+		}
+	}
+	.coffee-menu:last-child {
+		margin-bottom: 35px;
 	}
 }
+// ------------------------------ //
+
+.store-hero {
+	@include flex-center;
+	flex-direction: column;
+	img {
+		width: 100%;
+		height: 300px;
+		object-fit: cover;
+		object-position: 50% 25%;
+		position: relative;
+	}
+	section {
+		@include flex-center;
+		flex-direction: column;
+		position: absolute;
+		h1 {
+			color: white;
+		}
+		button {
+			@include flex-center;
+			justify-content: space-around;
+			@include button;
+		}
+	}
+}
+
+.purchase-info {
+	@include flex-center;
+	flex-direction: column;
+	background-color: $primary-bkg-color;
+	.info {
+		@include flex-center;
+		flex-direction: column;
+		img {
+			margin: 30px;
+			width: 125%;
+		}
+		.coffee-info {
+			@include flex-center;
+			flex-direction: column;
+			width: 125%;
+			.name-container {
+				@include flex-center;
+				flex-direction: row;
+				justify-content: space-between;
+				width: 100%;
+				.name {
+					display: flex;
+					flex-direction: column;
+					h2 {
+						font-size: 2rem;
+						padding-bottom: 10px;
+					}
+					span {
+						font-size: 1.5rem;
+					}
+				}
+			}
+			.buy {
+				@include flex-center;
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				span {
+					font-size: 2rem;
+					padding-top: $standard-spacing;
+					padding-bottom: $standard-spacing;
+				}
+				button {
+					@include button;
+					width: 135px;
+					height: 35px;
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+}
+// ------------------------------ //
