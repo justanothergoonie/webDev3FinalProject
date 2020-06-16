@@ -75,14 +75,35 @@ header {
 	padding: $standard-spacing;
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 	@include flex-center;
-	svg {
-		// margin: 15px auto;
+	@include bp-med {
+		flex-direction: row;
+		justify-content: space-between;
+		background: rgba(38, 38, 38, 0.7);
+		position: absolute;
+		z-index: 1;
 	}
 	nav {
-		@include flex-center;
-		font-size: 1.5rem;
-		padding: $standard-spacing;
+		ul {
+			display: flex;
+			flex-direction: column;
+			@include bp-med {
+				flex-direction: row;
+			}
+			li {
+				@include flex-center;
+				font-size: 1.5rem;
+
+				a {
+					padding: 10px;
+					@include bp-med {
+						flex-direction: row;
+						padding: 15px;
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -91,6 +112,10 @@ footer {
 	flex-direction: column;
 	background: $secondary-color;
 	padding: $standard-spacing;
+	@include bp-med {
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
 	.hours {
 		@include flex-center;
 		flex-direction: column;
@@ -131,8 +156,4 @@ footer {
 			}
 		}
 	}
-}
-
-.active {
-	border-bottom: 3px solid white;
 }
