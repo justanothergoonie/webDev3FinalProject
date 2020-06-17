@@ -19,6 +19,7 @@
 			color: white;
 			font-size: 2rem;
 			padding: 40px;
+			text-align: center;
 		}
 		a {
 			padding: 40px;
@@ -34,35 +35,39 @@
 	flex-direction: column;
 	background-color: $primary-bkg-color;
 	width: 100%;
+	padding: 30px;
 	@include bp-med {
 		flex-direction: row;
-	}
-	.our-copy {
-		@include flex-center;
-		flex-direction: column;
-
-		h1 {
-			font-size: 3rem;
-			padding: 40px;
-			@include bp-med {
-				font-size: 2rem;
-			}
-		}
-		p {
-			// padding: $standard-spacing;
-			font-size: 1.3rem;
-			@include bp-med {
-				// padding: 10px;
-				font-size: 1.2rem;
-			}
-		}
+		padding: 0px;
 	}
 	img {
 		display: none;
 		@include bp-med {
 			@include flex-center;
-			width: 50%;
+			max-width: 400px;
 			object-fit: cover;
+		}
+	}
+	.our-copy {
+		@include flex-center;
+		flex-direction: column;
+		flex-grow: 1;
+		h2 {
+			font-size: 3rem;
+			padding: 0px;
+			@include bp-med {
+				font-size: 1.7rem;
+				padding: 20px;
+			}
+		}
+		p {
+			padding: $standard-spacing;
+			font-size: 1.3rem;
+			max-width: 600px;
+			@include bp-med {
+				padding: 13px;
+				font-size: 0.9rem;
+			}
 		}
 	}
 }
@@ -73,6 +78,9 @@
 		position: absolute;
 		color: white;
 		z-index: 1;
+		@include bp-med {
+			padding-top: 110px;
+		}
 	}
 	img {
 		width: 100%;
@@ -86,22 +94,44 @@
 	@include flex-center;
 	flex-direction: column;
 	background-color: $primary-bkg-color;
+	@include bp-large {
+		flex-direction: row;
+	}
 	.coffee-menu {
 		@include flex-center;
 		flex-direction: column;
+		padding: 40px;
+		flex-grow: 1;
 		@include bp-med {
 			flex-direction: row;
 			width: 100%;
 		}
+		@include bp-large {
+			flex-direction: column;
+		}
 		img {
-			margin: 35px;
-			width: 125%;
+			width: 100%;
+			max-width: 320px;
 		}
 		.menu-item-container {
-			width: 125%;
+			width: 100%;
+			max-width: 600px;
+			@include bp-med {
+				padding-top: 0px;
+				padding-left: 30px;
+				height: 320px;
+			}
+			@include bp-large {
+				padding-left: 0px;
+				padding-top: 30px;
+				max-width: 320px;
+			}
 			h2 {
 				@include flex-center;
-				margin-bottom: $standard-spacing;
+				padding: 30px 30px 30px 30px;
+				@include bp-med {
+					padding: 0px 30px 30px 30px;
+				}
 			}
 			ul {
 				li {
@@ -110,23 +140,32 @@
 					font-size: 1.5rem;
 					padding-bottom: $standard-spacing;
 					@include bp-med {
+						font-size: 1.3rem;
+						line-height: 1em;
 						span {
 							padding-right: 35px;
+							@include bp-large {
+								padding-right: 0px;
+							}
 						}
 					}
 				}
 			}
 		}
 	}
-	.coffee-menu:last-child {
-		margin-bottom: 35px;
-	}
+	// .coffee-menu:last-child {
+	// 	margin-bottom: 35px;
+	// }
 }
 // ------------------------------ //
 
 .store-hero {
 	@include flex-center;
 	flex-direction: column;
+	@include bp-med {
+		align-items: flex-end;
+	}
+
 	img {
 		width: 100%;
 		height: 300px;
@@ -138,13 +177,34 @@
 		@include flex-center;
 		flex-direction: column;
 		position: absolute;
+		@include bp-med {
+			flex-direction: row;
+			padding-top: 115px;
+			justify-content: space-between;
+			width: 100%;
+		}
+		@include bp-large {
+			justify-content: flex-end;
+		}
 		h1 {
 			color: white;
+			font-size: 2.5em;
+			padding: 50px;
+			@include bp-med {
+				padding-left: 90px;
+			}
 		}
-		button {
-			@include flex-center;
-			justify-content: space-around;
-			@include button;
+		a {
+			padding: 30px;
+			@include bp-med {
+				padding: 30px 30px 30px 40px;
+			}
+
+			button {
+				@include flex-center;
+				justify-content: space-around;
+				@include button;
+			}
 		}
 	}
 }
@@ -153,31 +213,58 @@
 	@include flex-center;
 	flex-direction: column;
 	background-color: $primary-bkg-color;
+	@include bp-large {
+		flex-direction: row;
+	}
 	.info {
 		@include flex-center;
 		flex-direction: column;
+		padding: 40px;
+		flex-grow: 1;
+		@include bp-med {
+			flex-direction: row;
+			width: 100%;
+		}
+		@include bp-large {
+			flex-direction: column;
+			padding: 40px;
+		}
 		img {
-			margin: 30px;
-			width: 125%;
+			width: 100%;
+			max-width: 320px;
 		}
 		.coffee-info {
 			@include flex-center;
 			flex-direction: column;
-			width: 125%;
+			padding-top: 20px;
+			width: 100%;
+			@include bp-med {
+				max-width: 600px;
+				height: 320px;
+				padding: 0px 30px 30px 30px;
+				justify-content: end;
+			}
+			@include bp-large {
+				padding: 20px 0px 0px 0px;
+				max-width: 320px;
+			}
+
 			.name-container {
 				@include flex-center;
 				flex-direction: row;
 				justify-content: space-between;
 				width: 100%;
+				padding-top: 15px;
+
 				.name {
 					display: flex;
 					flex-direction: column;
 					h2 {
-						font-size: 2rem;
+						font-size: 1.5rem;
 						padding-bottom: 10px;
 					}
 					span {
-						font-size: 1.5rem;
+						font-size: 1.4rem;
 					}
 				}
 			}
@@ -187,7 +274,7 @@
 				display: flex;
 				justify-content: space-between;
 				span {
-					font-size: 2rem;
+					font-size: 1.5rem;
 					padding-top: $standard-spacing;
 					padding-bottom: $standard-spacing;
 				}

@@ -1,4 +1,2 @@
-"use strict";
-
-console.log("Hello World from main.js! \nChange this message, and make sure it changes in the browser \nto verify that you're working in the right files.");
+"use strict";for(var lightboxLinks=document.querySelectorAll(".lightboxify"),letThereBeLightBox=function(e){e.preventDefault();var t=document.createElement("div");t.classList.add("lightbox-backdrop"),t.style.opacity=0,setTimeout(function(){t.style.opacity=1,t.stylr.transition="1s"},10),document.body.appendChild(t);var i=document.createElement("div");i.classList.add("lightbox"),i.style.opacity=0,setTimeout(function(){i.style.opacity=1,i.style.transition="2s"},10),document.body.appendChild(i),i.appendChild(largeImage);var n=document.createElement("div");n.classList.add("lightbox-close"),i.appendChild(n);var o=function(){i.remove(),t.remove()};n.addEventListener("click",o),t.addEventListener("click",o),window.addEventListener("keyup",function(e){"Escape"===e.code&&o()})},i=0;i<lightboxLinks.length;i++)lightboxLinks[i].addEventListener("click",letThereBeLightBox);
 //# sourceMappingURL=main.js.map
