@@ -153,9 +153,6 @@
 			}
 		}
 	}
-	// .coffee-menu:last-child {
-	// 	margin-bottom: 35px;
-	// }
 }
 // ------------------------------ //
 
@@ -184,7 +181,7 @@
 			width: 100%;
 		}
 		@include bp-large {
-			justify-content: flex-end;
+			justify-content: center;
 		}
 		h1 {
 			color: white;
@@ -194,7 +191,7 @@
 				padding-left: 90px;
 			}
 			@include bp-large {
-				text-align: center;
+				padding: 0px;
 			}
 		}
 		a {
@@ -202,11 +199,20 @@
 			@include bp-med {
 				padding: 30px 30px 30px 40px;
 			}
+			@include bp-large {
+				padding: 0px;
+			}
 
 			button {
 				@include flex-center;
 				justify-content: space-around;
 				@include button;
+				@include bp-large {
+					position: absolute;
+					margin-right: 35px;
+					right: 0;
+					top: 110px;
+				}
 			}
 		}
 	}
@@ -232,7 +238,7 @@
 			flex-direction: column;
 			padding: 40px;
 		}
-		img {
+		.product-image {
 			width: 100%;
 			max-width: 320px;
 		}
@@ -269,6 +275,12 @@
 					span {
 						font-size: 1.4rem;
 					}
+				}
+				.bean {
+					min-width: 30px;
+					min-height: 34px;
+					animation: fadeIn 1.5s ease-in;
+					opacity: 1;
 				}
 			}
 			.buy {
