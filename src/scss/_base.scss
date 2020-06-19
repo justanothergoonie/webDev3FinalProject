@@ -62,12 +62,8 @@ ol {
 a {
 	color: $link-color;
 	text-decoration: none;
-
-	&:hover,
-	&:active {
-		text-decoration: underline;
-	}
 }
+
 span {
 	font-family: 'Zilla Slab', serif;
 }
