@@ -16,25 +16,86 @@
 }
 
 .lightbox {
+	// @include flex-center;
+	display: flex;
+	align-items: center;
+	// justify-content: space-between;
+	flex-direction: column;
 	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	background: rgb(2, 0, 36);
 	background: $primary-bkg-color;
-	padding: 30px;
+	width: 450px;
+	height: 350px;
+	@include bp-med {
+		width: 575px;
+		height: 475px;
+	}
 
-	.lightbox-close {
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 48px;
-		height: 48px;
-		transform: translate(50%, -50%);
-		border: 0;
-		outline: none;
-		background: none;
-		background-size: contain;
-		background-image: url(../img/close-button.png);
+	.yourCart {
+		@include flex-center;
+		// padding-bottom: 20px;
+
+		width: 100%;
+		@include bp-med {
+			// padding-bottom: 50px;
+		}
+		h1 {
+			font-size: 2rem;
+			padding-top: 50px;
+		}
+		.lightbox-close {
+			width: 48px;
+			height: 48px;
+			position: absolute;
+			transform: translate(380%, 0%);
+			@include bp-med {
+				transform: translate(450%, 50%);
+			}
+		}
+	}
+	.itemContainer {
+		@include flex-center;
+		width: 80%;
+		flex-direction: column;
+		border-bottom: solid black 2px;
+		.cartItem {
+			@include flex-center;
+			justify-content: space-between;
+			flex-direction: row;
+			width: 100%;
+			max-width: 575px;
+			padding: 25px 0px;
+			@include bp-med {
+				padding: 35px 30px;
+			}
+			span {
+				font-size: 1.5rem;
+			}
+			input {
+				width: 70px;
+				height: 35px;
+				background-color: white;
+				border: black solid 1px;
+				border-radius: 5px;
+				position: absolute;
+				transform: translate(350%, 0%);
+			}
+		}
+	}
+	.totalContainer {
+		@include flex-center;
+		justify-content: space-between;
+		width: 80%;
+
+		font-size: 1.5rem;
+		padding: 15px 0px;
+		@include bp-med {
+			padding: 35px 30px;
+		}
+	}
+	.checkOutButton {
+		@include button;
 	}
 }

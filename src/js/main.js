@@ -24,13 +24,68 @@ let letThereBeLightBox = function (event) {
 	// let largeImage = document.createElement('img');
 	// largeImage.setAttribute('src', this.href);
 
-    let
+	let yourCart = document.createElement('div');
+	yourCart.classList.add('yourCart');
 
-	whiteLight.appendChild(largeImage);
+	let yourCartHeader = document.createElement('h1');
+	yourCartHeader.innerText = 'Your Cart';
 
-	let closeBtn = document.createElement('div');
+	let items = document.createElement('div');
+	items.classList.add('itemContainer');
+
+	let cartItem1 = document.createElement('div');
+	cartItem1.classList.add('cartItem');
+
+	let itemName = document.createElement('span');
+	itemName.innerText = 'Peruvian Blonde';
+	let amountForm = document.createElement('input');
+	let amountTotal = document.createElement('span');
+	amountTotal.innerText = '$0';
+	cartItem1.appendChild(itemName);
+	cartItem1.appendChild(amountForm);
+	cartItem1.appendChild(amountTotal);
+
+	let cartItem2 = document.createElement('div');
+	cartItem2.classList.add('cartItem');
+
+	let itemName2 = document.createElement('span');
+	itemName2.innerText = 'Espresso';
+	let amountForm2 = document.createElement('input');
+	let amountTotal2 = document.createElement('span');
+	amountTotal2.innerText = '$0';
+
+	cartItem2.appendChild(itemName2);
+	cartItem2.appendChild(amountForm2);
+	cartItem2.appendChild(amountTotal2);
+
+	let totalContainer = document.createElement('div');
+	totalContainer.classList.add('totalContainer');
+	let total = document.createElement('span');
+	total.innerText = 'Total';
+	let totalAmount = document.createElement('span');
+	totalAmount.innerText = '$0';
+
+	let checkOutButton = document.createElement('button');
+	checkOutButton.innerText = 'Checkout';
+	checkOutButton.classList.add('checkOutButton');
+
+	totalContainer.appendChild(total);
+	totalContainer.appendChild(totalAmount);
+
+	items.appendChild(cartItem1);
+	items.appendChild(cartItem2);
+
+	whiteLight.appendChild(yourCart);
+
+	yourCart.appendChild(yourCartHeader);
+
+	whiteLight.appendChild(items);
+	whiteLight.appendChild(totalContainer);
+	whiteLight.appendChild(checkOutButton);
+	let closeBtn = document.createElement('img');
+	closeBtn.setAttribute('src', './dist/img/Assets/close-button.png');
 	closeBtn.classList.add('lightbox-close');
-	whiteLight.appendChild(closeBtn);
+	yourCart.appendChild(closeBtn);
 
 	let beGoneLightBox = function () {
 		whiteLight.remove();
